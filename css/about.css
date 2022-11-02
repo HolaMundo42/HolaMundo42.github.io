@@ -84,7 +84,7 @@ img:hover{
 
 @media (max-width: 768px){
   .main{
-    margin-top: 1rem;
+    margin-top: 13rem;
   }
   img{
     filter: blur(0px);
