@@ -35,8 +35,9 @@ const toCoords = function (number) {
             break;
         }
     }
-    coords.push(num);
+    number--;
     coords.push(number);
+    coords.push(num);
     return coords;
   }
         
