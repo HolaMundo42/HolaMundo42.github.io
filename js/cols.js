@@ -3,7 +3,7 @@ document.write("<tr>");
 
 const walls = []; 
 
-
+let clicked_points = [];
 
 if (window.innerWidth > 1200){
 for (var j = 1; j <= 9999; j++) { 
@@ -28,8 +28,16 @@ select = (val) => {
     if (val.style.background != color) {
         val.style.background = color;
         val.style.opacity = "50%";
+        clicked_points.push(val.id);
     }
     else{
         val.style = null;
+        clicked_points.pop();
     }
+    
+    if (clicked_points.length == 2){
+        //send clicked_points to fogo
+        
+        window.location.href = "/index.html";
+    } 
 }
