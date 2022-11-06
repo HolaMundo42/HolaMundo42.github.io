@@ -28,6 +28,7 @@ h1 {
     text-align: center;
 }
 
+
 img {
   height: auto;
   max-width: 101%;
@@ -57,6 +58,10 @@ img:hover{
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+.mobile-text{
+  content-visibility: hidden;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -84,10 +89,31 @@ img:hover{
 
 @media (max-width: 768px){
   .main{
-    margin-top: 13rem;
+    margin-top: 7rem;
   }
   img{
     filter: blur(0px);
+  }
+  .mobile-text{
+    content-visibility: visible;
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: 5rem;
+    color: aliceblue;
+  }
+  .wavess{
+    content-visibility: hidden;
+  }
+}
+
+@media (max-width: 1000px){
+  @media (min-width: 768px){
+    .wavess{
+      content-visibility: hidden;
+    }
+    .cards_item {
+      width: 50%;
+    }
   }
 }
 

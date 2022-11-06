@@ -4,6 +4,7 @@ document.write("<tr>");
 const walls = []; 
 
 let clicked_points = [];
+let teAma = false;
 
 if (window.innerWidth > 1200){
 for (var j = 1; j <= 9999; j++) { 
@@ -22,13 +23,31 @@ for (var j = 1; j <= 9999; j++) {
     document.write("<p>not available<br>for this screen size</p>");
 }
 
+const toCoords = function (number) {
+    let coords = [];
+    let num = 0;
+    while (teAma == false){
+        if (number > 100) {
+            number -= 100;
+            num += 1;
+        }
+        else{
+            break;
+        }
+    }
+    coords.push(num);
+    coords.push(number);
+    return coords;
+  }
         
 select = (val) => {
     let color = "red";
     if (val.style.background != color) {
         val.style.background = color;
         val.style.opacity = "50%";
-        clicked_points.push(val.id);
+
+        let coord = toCoords(val.id);
+        clicked_points.push(coord);
     }
     else{
         val.style = null;
@@ -38,6 +57,6 @@ select = (val) => {
     if (clicked_points.length == 2){
         //send clicked_points to fogo
         
-        window.location.href = "/index.html";
+        window.location.href = "/simulation.html";
     } 
 }
