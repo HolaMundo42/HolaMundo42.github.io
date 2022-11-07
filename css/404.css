@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.top-text{
+  margin-left: 7rem;
+  padding-top: 14rem;
+}
+
+@media (max-height: 700px) {
+  .top-text{
+    padding-top: 9rem;
+  }
+}
+
+h1{
+  font-size: clamp(24px, 4vw, 40px);
+  line-height: 1.3em;
+  font-weight: 500;
+  margin-top: 0;
+  font-size: 55px;
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+}
+
+button{
+  border-radius: 10px;
+  margin-left: 11rem;
+}
+
+body {
+  background: teal;
+}
+
+.traffic-lights {
+  max-width: 20%;
+
+  height: auto;
+  
+  margin-top: 5%;
+  margin-right: 10%;
+  float: right;
+}
+
+.traffic-lights {
+  padding: 10px 50px;
+  background: #222;
+  border-radius: 35px;
+  border: 15px solid #111;
+  margin: auto auto auto 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index:100;
+}
+
+.light {
+  border-top: 0.8em solid black;
+  border-radius: 50%;
+  background: #111;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px 0px 0px 30px
+}
+
+@keyframes red {
+  0%{
+    background: #111;
+  }
+  2%,
+  40% {
+    background: #c0392b;
+  }
+  40%,
+  41%{
+    background: #111;
+  }
+  42%,
+  80% {
+    background: #c0392b;
+  }
+  100% {
+    background: #111;
+  }
+}
+
+@keyframes amber {
+  0%,
+  20% {
+    background: #111;
+  }
+  22%,
+  40% {
+    background: #FBC00C;
+  }
+  42%,
+  80% {
+    background: #111;
+  }
+  82%,
+  100% {
+    background: #FBC00C;
+  }
+}
+
+@keyframes green {
+  0%,
+  100% {
+    background: #111;
+  }
+}
+
+.red {
+  animation: red 10s linear infinite;
+}
+
+.amber {
+  animation: amber 10s linear infinite;
+}
+
+.traffic-lights::before {
+  content: "";
+  width: 5em;
+  height: 3em;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  z-index: 0;
+}
+.traffic-lights::after{
+  content: "";
+  width:150px;
+  height:20px;
+  position:absolute;
+  top:110%;
+  left:50%;
+  transform: translateX(-50%);
+  background: #111;
+  z-index: 0;
+}
+
+button, button::after {
+  margin-top: 25px;
+  width: 380px;
+  height: 86px;
+  font-size: 36px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 88px;
+  box-shadow: 6px 0px 0px rgb(6, 162, 162);
+  outline: transparent;
+  position: relative;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'Drive Back';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media(max-width: 1260px){
+  .traffic-lights{
+    visibility: hidden;
+  }
+}
+
+@media (max-width:730px){
+  button{
+    margin: 2rem;
+    margin-top: 1rem;
+    width: 300px;
+  }
+  .top-text{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    padding-top: 2rem;
+  }
+}
