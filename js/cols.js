@@ -7,7 +7,7 @@ let clicked_points = [];
 let teAma = false;
 
 if (window.innerWidth > 1200){
-for (var j = 1; j <= 9999; j++) { 
+for (var j = 1; j <= 10000; j++) { 
     if (walls.includes(j)){
         document.write("<a class='wall' id='" + j + "' style='background: rgb(83, 78, 78); opacity: 100;'></a>");
         }

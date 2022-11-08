@@ -8,7 +8,8 @@ html{
     height: fit-content;  
 
     background: gray;
-    background-image: url('https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/49b7086a-eace-46c6-bbef-fe8ef82715e5_scaled.jpg');
+    /*background-image: url('https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/49b7086a-eace-46c6-bbef-fe8ef82715e5_scaled.jpg');*/ /*Version linda*/
+    background-image: url('../imgs/mapaticok.png'); /*version funcional*/
     background-size: cover;
     margin-top: 110px;
     margin-left: 25px;
